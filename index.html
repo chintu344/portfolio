@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G Nithish Kumar Reddy | AI_SYSTEM</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #070b12;
+  --panel: #101a28;
+  --cyan: #00f0ff;
+  --green: #8cffb4;
+  --text: #e5f7ff;
+  --muted: #8ba5b8;
+  --line: #203849;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    linear-gradient(#00f0ff09 1px, transparent 1px),
+    linear-gradient(90deg, #00f0ff09 1px, transparent 1px);
+  background-size: 35px 35px;
+}
+
+a { color: inherit; text-decoration: none; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 7%;
+  background: #070b12ed;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font: 700 18px 'Orbitron', sans-serif;
+  color: var(--cyan);
+}
+
+nav { display: flex; gap: 20px; flex-wrap: wrap; }
+
+nav a {
+  font-size: 15px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+nav a:hover { color: var(--cyan); }
+
+section { padding: 75px 8%; scroll-margin-top: 65px; }
+
+.hero {
+  min-height: 82vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--green);
+  font: 600 12px 'Orbitron', sans-serif;
+  letter-spacing: 4px;
+}
+
+h1 {
+  font: 700 clamp(32px, 6vw, 65px) 'Orbitron', sans-serif;
+  margin: 20px 0;
+  line-height: 1.3;
+}
+
+h1 span, .cyan { color: var(--cyan); }
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 25px;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  background: #00f0ff0b;
+  font: 600 13px 'Orbitron', sans-serif;
+  cursor: pointer;
+  margin: 6px;
+}
+
+.btn:hover {
+  color: var(--bg);
+  background: var(--cyan);
+  box-shadow: 0 0 22px #00f0ff55;
+}
+
+.status {
+  margin-top: 30px;
+  color: var(--green);
+  font-size: 14px;
+}
+
+.section-label {
+  color: var(--cyan);
+  font: 600 12px 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font: 700 clamp(23px, 3vw, 32px) 'Orbitron', sans-serif;
+  margin-bottom: 30px;
+}
+
+h3 { color: var(--cyan); margin-bottom: 10px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: linear-gradient(145deg, #111e2d, #0a111c);
+  border: 1px solid var(--line);
+  padding: 24px;
+  position: relative;
+  transition: .25s;
+}
+
+.card:hover {
+  border-color: var(--cyan);
+  transform: translateY(-4px);
+}
+
+.card p { color: var(--muted); }
+
+.tag {
+  display: inline-block;
+  border: 1px solid #28505c;
+  color: var(--green);
+  font-size: 13px;
+  padding: 2px 9px;
+  margin: 12px 4px 0 0;
+}
+
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 35px;
+}
+
+.avatar {
+  width: 170px;
+  height: 170px;
+  flex-shrink: 0;
+  border: 2px solid var(--cyan);
+  background: radial-gradient(circle, #16394a, #080d15);
+  display: grid;
+  place-items: center;
+  font-size: 75px;
+  box-shadow: 0 0 30px #00f0ff20;
+}
+
+.profile-info { flex: 1; min-width: 220px; }
+
+.profile-info p { margin: 8px 0; }
+
+.skill { margin: 15px 0; }
+
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bar {
+  height: 6px;
+  background: #1a2c3c;
+  margin-top: 5px;
+}
+
+.bar div {
+  height: 100%;
+  background: var(--cyan);
+}
+
+.timeline {
+  border-left: 2px solid var(--cyan);
+  padding-left: 22px;
+}
+
+.timeline .card { margin-bottom: 18px; }
+
+form { display: grid; gap: 14px; }
+
+input, textarea {
+  width: 100%;
+  padding: 13px;
+  background: #080f18;
+  border: 1px solid var(--line);
+  color: white;
+  font: inherit;
+}
+
+input:focus, textarea:focus { outline: 1px solid var(--cyan); }
+
+textarea { min-height: 120px; resize: vertical; }
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+#clock { color: var(--green); }
+
+@media(max-width: 700px) {
+  header { align-items: flex-start; gap: 12px; flex-direction: column; }
+  nav { gap: 12px; }
+  nav a { font-size: 12px; }
+  section { padding: 55px 6%; }
+  .hero { min-height: 70vh; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="#home" class="logo">NITHISH.exe</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Goals</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">PERSONAL PORTFOLIO // SYSTEM ONLINE</div>
+    <h1>HI, I'M <span>G NITHISH<br>KUMAR REDDY</span></h1>
+    <p>
+      B.Tech Computer Science Engineering student specializing in
+      Artificial Intelligence and Machine Learning. Learning,
+      building, and creating technology for the future.
+    </p>
+    <a class="btn" href="#about">ENTER THE SYSTEM →</a>
+    <a class="btn" href="#projects">VIEW PROJECTS</a>
+    <div class="status">● SYSTEM ONLINE &nbsp; | &nbsp; LEVEL 02</div>
+    <p style="margin-top:15px">LOCAL TIME: <span id="clock">--:--:--</span></p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-label">// SYSTEM_LOG: BEGINNING</div>
+  <h2>ABOUT ME</h2>
+  <div class="profile">
+    <div class="avatar">👨‍💻</div>
+    <div class="profile-info">
+      <h3>G NITHISH KUMAR REDDY</h3>
+      <p><strong>ROLE:</strong> B.Tech CSE (AI & ML) Student</p>
+      <p><strong>INSTITUTION:</strong> Sandip University</p>
+      <p><strong>INTERESTS:</strong> Programming, AI, Web Development</p>
+      <p><strong>MISSION:</strong> Build real solutions and learn relentlessly.</p>
+      <a href="#contact" class="btn">CONNECT WITH ME</a>
+    </div>
+  </div>
+
+  <div class="grid" style="margin-top:35px">
+    <div class="card">
+      <h3>🎓 EDUCATION</h3>
+      <p>B.Tech in Computer Science Engineering</p>
+      <p>Specialization: AI & Machine Learning</p>
+      <p>Currently studying second year.</p>
+    </div>
+    <div class="card">
+      <h3>🚀 CAREER OBJECTIVE</h3>
+      <p>To improve my coding skills, develop practical projects,
+      and become a skilled software and AI engineer.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-label">// SYSTEM_LOG: SKILLS</div>
+  <h2>TECHNICAL ABILITIES</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>💻 PROGRAMMING</h3>
+      <div class="skill">
+        <div class="skill-top"><span>Python</span><span>Learning</span></div>
+        <div class="bar"><div style="width:55%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-top"><span>HTML</span><span>Learning</span></div>
+        <div class="bar"><div style="width:60%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-top"><span>CSS</span><span>Learning</span></div>
+        <div class="bar"><div style="width:45%"></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🧠 AREAS OF INTEREST</h3>
+      <p>Artificial Intelligence</p>
+      <p>Machine Learning</p>
+      <p>Web Development</p>
+      <p>Problem Solving</p>
+      <p>Software Development</p>
+    </div>
+  </div>
+  <p style="color:var(--muted);margin-top:15px">
+    Note: Edit the skill indicators to reflect your actual proficiency.
+  </p>
+</section>
+
+<section id="projects">
+  <div class="section-label">// SYSTEM_LOG: PROJECTS</div>
+  <h2>MY PROJECTS & MISSIONS</h2>
+
+  <div class="grid">
+    <article class="card">
+      <h3>🚘 CAR SHOWROOM WEBSITE</h3>
+      <p>A website concept for displaying cars, their specifications,
+      prices, and basic showroom information.</p>
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">Web Design</span>
+      <p style="margin-top:15px;color:var(--green)">STATUS: PROJECT</p>
+    </article>
+
+    <article class="card">
+      <h3>🤖 AI LEARNING PROJECT</h3>
+      <p>A learning space for exploring Python, datasets, and
+      introductory artificial intelligence concepts.</p>
+      <span class="tag">Python</span>
+      <span class="tag">AI/ML</span>
+      <p style="margin-top:15px;color:var(--green)">STATUS: LEARNING</p>
+    </article>
+
+    <article class="card">
+      <h3>🌐 PERSONAL PORTFOLIO</h3>
+      <p>A personal website to showcase my education, skills,
+      projects, and progress as a developer.</p>
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">JavaScript</span>
+      <p style="margin-top:15px;color:var(--green)">STATUS: ACTIVE</p>
+    </article>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="section-label">// SYSTEM_LOG: QUESTS</div>
+  <h2>MY LEARNING JOURNEY</h2>
+
+  <div class="timeline">
+    <div class="card">
+      <h3>🏆 MASTER PYTHON</h3>
+      <p>Practice programming, functions, data structures,
+      and problem-solving challenges.</p>
+      <span class="tag">ONGOING QUEST</span>
+    </div>
+
+    <div class="card">
+      <h3>💡 BUILD REAL-WORLD PROJECTS</h3>
+      <p>Develop websites and useful applications to gain
+      hands-on development experience.</p>
+      <span class="tag">ONGOING QUEST</span>
+    </div>
+
+    <div class="card">
+      <h3>🚀 LEARN AI & MACHINE LEARNING</h3>
+      <p>Study data processing, model training, and introductory
+      machine-learning workflows.</p>
+      <span class="tag">FUTURE MISSION</span>
+    </div>
+
+    <div class="card">
+      <h3>🌟 PREPARE FOR A SOFTWARE CAREER</h3>
+      <p>Build a strong portfolio, practice coding, and prepare
+      for internships and placement opportunities.</p>
+      <span class="tag">LONG-TERM GOAL</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-label">// SYSTEM_LOG: CONNECTION</div>
+  <h2>LET'S CONNECT</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>OPEN FOR OPPORTUNITIES</h3>
+      <p>Interested in learning, collaborating on projects,
+      and connecting with fellow developers.</p>
+      <p style="margin-top:18px">GitHub: Add your profile link</p>
+      <p>LinkedIn: Add your profile link</p>
+    </div>
+
+    <div class="card">
+      <h3>SEND A MESSAGE</h3>
+      <form id="contactForm">
+        <input id="name" type="text" placeholder="Your name" required>
+        <input id="email" type="email" placeholder="Your email" required>
+        <textarea id="message" placeholder="Your message" required></textarea>
+        <button type="submit" class="btn">PREPARE EMAIL →</button>
+        <p id="formStatus" style="color:var(--green)"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>G NITHISH KUMAR REDDY // PERSONAL PORTFOLIO</p>
+  <p>DESIGNED WITH HTML, CSS & JAVASCRIPT</p>
+  <p>© <span id="year"></span> | KEEP LEARNING. KEEP BUILDING.</p>
+</footer>
+
+<script>
+function updateClock() {
+  document.getElementById("clock").textContent =
+    new Date().toLocaleTimeString();
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+document.getElementById("contactForm").addEventListener("submit",
+  function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const subject = encodeURIComponent("Portfolio contact from " + name);
+    const body = encodeURIComponent(
+      "Name: " + name +
+      "\nEmail: " + email +
+      "\n\nMessage:\n" + message
+    );
+
+    document.getElementById("formStatus").textContent =
+      "Opening your email application...";
+
+    window.location.href =
+      "mailto:YOUR_EMAIL@example.com?subject=" + subject +
+      "&body=" + body;
+  }
+);
+</script>
+
+</body>
+</html>
